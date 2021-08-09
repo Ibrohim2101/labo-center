@@ -48,24 +48,18 @@ body {
 .header {
 	background-color: #000000;
 }
-/* carusel*/
-.carousel-item {
-	height: 600px;
+/* carousel*/
+.carousel {
+	margin-top: -35px;
 }
 
 .carousel-item img {
 	height: 600px;
 }
-.img {
-	height: 600px;
-}
-.img5 {
-	height: 300px;
-}
-/*carusel end*/
+/*carousel end*/
+
 
 /*about firm begin*/
-
 #aboutUs {
 	padding: 0;
 }
