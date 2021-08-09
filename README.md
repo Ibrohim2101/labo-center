@@ -1,1 +1,1 @@
-# labo-center2
+# labo-center
