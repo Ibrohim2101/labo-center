@@ -260,18 +260,38 @@ footer {
 	min-width: 300px;
 }
 
+.footer_contact {
+	padding: 1rem;
+}
+
+.footer .logo-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.contacts-icon {
+	display: flex;
+	align-items: center;
+}
+
+.contacts-icon svg {
+	margin-right: 0.75rem;
+}
 
 .footer-about_firm-title{
 	font-size: 18px;
 	font-weight: 500;
 	padding-top: 20px;
 	padding-bottom: 5px;
+	margin-bottom: 0.5rem;
 	border: none;
 	border-bottom:1px solid white
 }
 
 .footer-icon_text{
 	font-size: 12px;
+	margin-bottom: 0;
 	opacity: 0.7;
 }
 
