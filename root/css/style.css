@@ -101,6 +101,12 @@ body {
     padding-right: 2rem;
 }
 
+@media (max-width: 768px) {
+    .about__firm-text {
+        padding: 1.25rem;
+    }
+}
+
 /*about firm end*/
 
 
@@ -323,8 +329,8 @@ body {
         right: 16px;
     }
 
-    .about__firm-pic p {
+    .about__firm-pic h4 {
         right: 16px;
-        top: 50px;
+        top: 56px;
     }
 }
