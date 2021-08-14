@@ -103,8 +103,10 @@ body {
 }
 
 /* carousel*/
-.carousel {
-	margin-top: 66px;
+@media (min-width: 768px) {
+    .carousel {
+        margin-top: 66px;
+    }
 }
 
 .carousel-item img {
