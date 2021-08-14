@@ -1,7 +1,8 @@
 var header = $('.navbar');
+var toggler = $('.navbar-toggler');
 
 window.onscroll = function (e) {
-    if (window.scrollY > 50) {
+    if (window.scrollY >= 50 && toggler.attr('aria-expanded') === 'false') {
         header.removeClass('header');
         header.addClass('header_active');
     } else {
@@ -9,6 +10,11 @@ window.onscroll = function (e) {
         header.addClass('header');
     }
 };
+
+toggler.on('click', function () {
+    header.removeClass('header_active');
+    header.addClass('header');
+});
 
 var swiper = new Swiper('.mySwiper', {
     slidesPerView: 3,

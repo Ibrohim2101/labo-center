@@ -46,6 +46,11 @@ body {
 	color: #fff;
 }
 
+.application-btn-container {
+	display: flex;
+	justify-content: center;
+}
+
 .modal {
 	color: #295e91;
 }
@@ -84,16 +89,22 @@ body {
 }
 
 .header_active {
+	transition: all 0.7s;
 	background: #000000a1;
 }
 
 .header {
+	transition: all 0.7s;
 	background-color: #000000;
+}
+
+.navbar-brand img {
+	margin-right: 0.5rem;
 }
 
 /* carousel*/
 .carousel {
-	margin-top: -35px;
+	margin-top: 66px;
 }
 
 .carousel-item img {
