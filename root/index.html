@@ -5,32 +5,28 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>LABO CENTER</title>
-   <meta name="title" content="TIUE - Tashkent International University of Education">
-  <meta name="description"
-    content="Bizning firma 2018-yildan buyon o'z faolyatini olib burmoqda. Shu vaqtga qadar
+   <title>Labo Center</title>
+   <meta name="title" content="Labo Center">
+   <meta name="description" content="Bizning firma 2018-yildan buyon o'z faolyatini olib burmoqda. Shu vaqtga qadar
     2500dan ziyod mashinalarga xizmat ko'rsatgan.">
-  <meta name="robots" content="index, follow">
-  <meta name="google" content="nositelinkssearchbox" />
+   <meta name="robots" content="index, follow">
+   <meta name="google" content="nositelinkssearchbox"/>
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="http://labo-center.netlify.app">
-  <meta property="og:title" content="Labo Center">
-  <meta property="og:description"
-    content="The only service center for damas car. ">
-  <meta name="image" property="og:image" content="https://labo-center.netlify.app/img/skrin2.png">
-  <meta property="og:image:alt" content="Labo car" />
-  <meta name="author" content="Mirodil Kamilov, Ibragimov Ibrohim">
+   <!-- Open Graph / Facebook -->
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="https://labo-center.uz">
+   <meta property="og:title" content="Labo Center">
+   <meta property="og:description" content="The only service center for damas car. ">
+   <meta name="image" property="og:image" content="img/skrin2.png">
+   <meta property="og:image:alt" content="Labo car"/>
+   <meta name="author" content="Mirodil Kamilov, Ibragimov Ibrohim">
 
-
-  
-  <link rel="shortcut icon" href="./img/favicon (2).ico" type="image/png">
+   <link rel="shortcut icon" href="img/favicon.ico" type="image/png">
 
    <!-- CSS only -->
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-   <link rel="stylesheet" href="./css/style.css">
+   <link rel="stylesheet" href="css/style.css">
 
    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,9 +41,8 @@
          <img src="img/LOGO.png" alt="" width="48" height="48" class="d-inline-block align-text-top">
          Labo Center
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-              aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -66,8 +61,8 @@
             </li>
          </ul>
          <div d-flex>
-            <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Ariza
-               berish
+            <button class="btn btn-outline-logo" data-bs-toggle="modal" data-bs-target="#applicationModal">
+               Ariza qoldiring
             </button>
          </div>
       </div>
@@ -76,35 +71,39 @@
 <!--Nav end-->
 
 <!--Modal begin-->
-<div class="modal fade" id="exampleModal" tabindex="1" aria-labelledby="exampleModalabel" aria-hidden="true">
-   <div class="modal-dialog">
+<div class="modal fade" id="applicationModal" aria-labelledby="applicationModalLabel" data-bs-backdrop="static"
+     data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ariza berish</h5>
-            <button class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+            <h5 class="modal-title" id="applicationModalLabel">
+               Arizangizni qoldiring va biz siz bilan albatta bog'lanamiz
+            </h5>
+            <button type="button" class="btn-close btn-close-white" aria-label="Close"
+                    data-bs-dismiss="modal"></button>
          </div>
          <div class="modal-body">
             <form>
                <div class="mb-3">
-                  <label for="exampleInputName" class="form-label">Ism,familyangiz</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1"
-                         aria-describedby="emailHelp">
+                  <label for="name" class="form-label">Ism, familyangiz</label>
+                  <input name="name" value="" type="text" class="form-control" id="name" aria-describedby="name"
+                         autofocus>
                </div>
                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Telefon raqamingiz</label>
-                  <input type="number" class="form-control" id="exampleInputEmail1"
-                         aria-describedby="emailHelp">
+                  <label for="phone-number" class="form-label">Telefon raqamingiz</label>
+                  <input name="phone" value="+998 " type="text" class="form-control" id="phone-number"
+                         aria-describedby="phone-number">
                </div>
                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Telegram raqamingiz yoki
-                     akkauntingiz</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1"
-                         aria-describedby="emailHelp">
+                  <label for="message" class="form-label">Sizning xabaringiz</label>
+                  <textarea name="message" value="" class="form-control" id="message"
+                            aria-describedby="message"></textarea>
                </div>
             </form>
          </div>
          <div class="modal-footer">
-            <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Yopish</button>
+            <button type="submit" class="btn btn-logo">Jo'natish</button>
          </div>
       </div>
    </div>
@@ -194,8 +193,8 @@
 
          <div class="col-md-3 text-center col-sm-12 good__sides">
             <h4>Arzon narx</h4>
-            <svg xmlns="http://www.w3.org/2000/svg" width="4em" height="4em" fill="orange"
-                 class="bi bi-cash-coin" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="4em" height="4em" fill="orange" class="bi bi-cash-coin"
+                 viewBox="0 0 16 16">
                <path fill-rule="evenodd"
                      d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
                <path
@@ -233,7 +232,8 @@
                <path
                   d="M9.972 2.508a.5.5 0 0 0-.16-.556l-.178-.129a5.009 5.009 0 0 0-2.076-.783C6.215.862 4.504 1.229 2.84 3.133H1.786a.5.5 0 0 0-.354.147L.146 4.567a.5.5 0 0 0 0 .706l2.571 2.579a.5.5 0 0 0 .708 0l1.286-1.29a.5.5 0 0 0 .146-.353V5.57l8.387 8.873A.5.5 0 0 0 14 14.5l1.5-1.5a.5.5 0 0 0 .017-.689l-9.129-8.63c.747-.456 1.772-.839 3.112-.839a.5.5 0 0 0 .472-.334z"/>
             </svg>
-            <p>Biz foydalanadigan uskunaning texnologik ustunligi Sultan Avto Biznes ning ajralib turadigan xususiyati.</p>
+            <p>Biz foydalanadigan uskunaning texnologik ustunligi Sultan Avto Biznes ning ajralib turadigan
+               xususiyati.</p>
          </div>
       </div>
    </div>
@@ -356,8 +356,7 @@
                              class="bi bi-clock" viewBox="0 0 16 16">
                            <path
                               d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
-                           <path
-                              d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                           <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
                         </svg>
                      </div>
                      <p class="footer-icon_text">D. - Sh.: 9:00 - 19:00 gacha</p>
