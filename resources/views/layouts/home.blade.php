@@ -74,7 +74,7 @@
 </nav>
 <!--Nav end-->
 
-<!--Modal begin-->
+<!--Application modal begin-->
 <div class="modal fade" id="applicationModal" aria-labelledby="applicationModalLabel" data-bs-backdrop="static"
      data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -87,34 +87,84 @@
                     data-bs-dismiss="modal"></button>
          </div>
          <div class="modal-body">
-            <form>
+            <form action="{{ route('applications.store') }}" method="post" id="application-form">
+               @csrf
                <div class="mb-3">
                   <label for="name" class="form-label">Ism, familyangiz</label>
-                  <input name="name" value="" type="text" class="form-control" id="name" aria-describedby="name"
+                  <input name="name" value="{{ old('name') }}" type="text"
+                         class="form-control @error('name') is-invalid @enderror"
+                         id="name" aria-describedby="name"
                          autofocus>
+                  @error('name')
+                  <div class="invalid-feedback">{{ $message }}</div>
+                  @enderror
                </div>
                <div class="mb-3">
                   <label for="phone-number" class="form-label">Telefon raqamingiz</label>
-                  <input name="phone" value="+998 " type="text" class="form-control" id="phone-number"
+                  <input name="phone" value="{{ old('phone') ?? '+998 ' }}" type="text"
+                         class="form-control @error('phone') is-invalid @enderror" id="phone-number"
                          aria-describedby="phone-number">
+                  @error('phone')
+                  <div class="invalid-feedback">{{ $message }}</div>
+                  @enderror
                </div>
                <div class="mb-3">
                   <label for="message" class="form-label">Sizning xabaringiz</label>
-                  <textarea name="message" value="" class="form-control" id="message"
-                            aria-describedby="message"></textarea>
+                  <textarea name="message" value="" class="form-control @error('message') is-invalid @enderror"
+                            id="message"
+                            aria-describedby="message">{{ old('name') }}</textarea>
+                  @error('message')
+                  <div class="invalid-feedback">{{ $message }}</div>
+                  @enderror
                </div>
             </form>
          </div>
          <div class="modal-footer">
             <button class="btn btn-secondary" data-bs-dismiss="modal">Yopish</button>
-            <button type="submit" class="btn btn-logo">Jo'natish</button>
+            <button form="application-form" type="submit" class="btn btn-logo">Jo'natish</button>
+         </div>
+      </div>
+   </div>
+</div>
+
+@if($errors->any())
+   @push('show-application-modal')
+      <script>
+          var applicationModal = new bootstrap.Modal($('#applicationModal'), {
+              keyboard: false
+          });
+
+          $(document).ready(function () {
+              applicationModal.show();
+          });
+      </script>
+   @endpush
+@endif
+<!--Modal end-->
+
+@yield('content')
+
+<!--Success modal begin-->
+@php $hasError = session('error') !== null; @endphp
+<div class="modal fade success-modal" id="successModal" aria-labelledby="successModalLabel" data-bs-backdrop="static"
+     data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="btn-close btn-close-white" aria-label="Close"
+                    data-bs-dismiss="modal"></button>
+         </div>
+         <div class="modal-body">
+            <img src="{{ $hasError ? '/img/error.svg' : '/img/success.svg' }}" alt="success logo">
+            <h5>{{ $hasError ? __(session('error')) : __(session('success')) }}</h5>
+         </div>
+         <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Yopish</button>
          </div>
       </div>
    </div>
 </div>
 <!--Modal end-->
-
-@yield('content')
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
@@ -134,6 +184,20 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script src="{{ asset('js/custom.js') }}"></script>
+
+@stack('show-application-modal')
+
+@if(session('error') || session('success'))
+   <script>
+       var successModal = new bootstrap.Modal($('#successModal'), {
+           keyboard: false
+       });
+
+       $(document).ready(function () {
+           successModal.show();
+       });
+   </script>
+@endif
 </body>
 
 </html>

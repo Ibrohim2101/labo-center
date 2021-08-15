@@ -62,7 +62,8 @@
       <div class="container-fluid col-sm-12 about" id="aboutUs">
          <div class="row">
             <div class="col-md-6 about__firm-pic">
-               <img class="w-100 image" src="/img/chevrolet_labo_1.jpg" alt="Chevrolet labo image" style="opacity: 0.7;">
+               <img class="w-100 image" src="/img/chevrolet_labo_1.jpg" alt="Chevrolet labo image"
+                    style="opacity: 0.7;">
                <h3 class="aboutUs-h3">4</h3>
                <h4>yil</h4>
                <h5 class="aboutUs">O'zbekiston bozorida</h5>
@@ -135,12 +136,12 @@
       <div class="swiper-container mySwiper my-5" id="example" style="max-width: 90vw;">
          <h1 class="text-center example__title">Mahsulotlarimizdan namunalar</h1>
          <div class="photos">
-            <div class="photo1"><img src="/img/rp/4.jpg" alt="Mahsulotlardan na'muna"></div>
-            <div class="photo2"><img src="/img/rp/5.jpg" alt="Mahsulotlardan na'muna"></div>
-            <div class="photo3"><img src="/img/rp/6.jpg" alt="Mahsulotlardan na'muna"></div>
-            <div class="photo4"><img src="/img/rp/1.jpg" alt="Mahsulotlardan na'muna"></div>
-            <div class="photo5"><img src="/img/rp/2.jpg" alt="Mahsulotlardan na'muna"></div>
-            <div class="photo6"><img src="/img/rp/3.jpg" alt="Mahsulotlardan na'muna"></div>
+            <div class="photo1"><img src="/img/rp/4.jpg" alt="Mahsulotlardan na'muna" loading="lazy"></div>
+            <div class="photo2"><img src="/img/rp/5.jpg" alt="Mahsulotlardan na'muna" loading="lazy"></div>
+            <div class="photo3"><img src="/img/rp/6.jpg" alt="Mahsulotlardan na'muna" loading="lazy"></div>
+            <div class="photo4"><img src="/img/rp/1.jpg" alt="Mahsulotlardan na'muna" loading="lazy"></div>
+            <div class="photo5"><img src="/img/rp/2.jpg" alt="Mahsulotlardan na'muna" loading="lazy"></div>
+            <div class="photo6"><img src="/img/rp/3.jpg" alt="Mahsulotlardan na'muna" loading="lazy"></div>
          </div>
       </div>
       <!--Products begin-->
@@ -182,7 +183,8 @@
             <div class="col-md-12 card">
                <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000.003117073551!2d69.22583131492235!3d41.243490012867085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae61cfc82e9e79%3A0x5e5c305c5d07e5ac!2sLabo%20Center!5e0!3m2!1sru!2s!4v1625403024044!5m2!1sru!2s"
-                  width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="Labo Center location"></iframe>
+                  width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                  title="Labo Center location"></iframe>
             </div>
 
             <div class="row footer_contact">
