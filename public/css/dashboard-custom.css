@@ -13,3 +13,25 @@
 .logo {
     width: 2.3rem;
 }
+
+.alert-body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.alert-body svg {
+    display: inline-block;
+    width: 1.5rem;
+}
+
+.alert-body p svg {
+    margin-right: 0.5rem;
+}
+
+.alert-body .alert-dismiss-btn {
+    margin-left: 0.5rem;
+}
+
+.alert-dismiss-btn {
+    cursor: pointer;
+}

@@ -27,7 +27,7 @@ Route::group([
 ], function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
 
-    Route::resource('settings', SettingsController::class)->only('index', 'update');
+    Route::resource('settings', SettingsController::class)->only('index', 'update')->parameter('settings', 'user');
 });
 
 require __DIR__ . '/auth.php';
