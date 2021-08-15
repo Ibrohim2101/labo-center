@@ -1,0 +1,15 @@
+.dropdown-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.dropdown-link svg {
+    width: 1.5rem;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.logo {
+    width: 2.3rem;
+}
