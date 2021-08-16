@@ -12,7 +12,7 @@ Route::get('/', function () {
 })->name('home.index');
 
 // Webhook (Telegram bot)
-Route::post('/{token}/webhook', WebhookController::class)->name('webhook');
+Route::post('/8a6DvPbabmL0kxTwIP5xYDmHaA6CNGPnevxyHgjYq1fGp53hRr6g87j/webhook', WebhookController::class)->name('webhook');
 
 Route::post('/applications', [ApplicationController::class, 'store'])->name('applications.store');
 
