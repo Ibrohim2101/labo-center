@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\NewApplicationCreated;
 use App\Http\Requests\StoreApplicationRequest;
 use App\Models\Application;
 
@@ -12,11 +13,13 @@ class ApplicationController extends Controller
         $validated = $request->validated();
 
         try {
-            Application::create($validated);
+            $application = Application::create($validated);
         } catch (\Exception $exception) {
             $request->session()->flash('error', "Tizmda nosozslik iltimos keyinroq urinib ko'ring");
             return redirect()->route('home.index');
         }
+
+        NewApplicationCreated::dispatch($application);
 
         $request->session()->flash('success', 'Sizning arizangiz muvaffaqiyatli saqlandi!');
         return redirect()->route('home.index');

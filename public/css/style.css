@@ -115,12 +115,13 @@ body {
 /* carousel*/
 @media (min-width: 768px) {
     .carousel {
-        margin-top: 66px;
+        margin-top: 74px;
     }
 }
 
 .carousel-item img {
-    height: 600px;
+    /*height: 600px;*/
+    height: calc(100vh - 74px);
 }
 
 /*carousel end*/
