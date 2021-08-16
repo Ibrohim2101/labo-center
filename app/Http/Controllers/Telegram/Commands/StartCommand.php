@@ -7,22 +7,22 @@ use Telegram\Bot\Commands\Command;
 /**
  * Class HelpCommand.
  */
-class HelpCommand extends Command
+class StartCommand extends Command
 {
     /**
      * @var string Command Name
      */
-    protected $name = 'help';
+    protected $name = 'start';
 
     /**
      * @var array Command Aliases
      */
-    protected $aliases = ['listcommands'];
+    protected $aliases = ['start'];
 
     /**
      * @var string Command Description
      */
-    protected $description = 'Help command, Get a list of commands';
+    protected $description = 'Start command, Activates the bot';
 
     /**
      * {@inheritdoc}
