@@ -12,10 +12,10 @@ class WebhookController extends Controller
 
         $update = $telegram->commandsHandler(true);
 
-//        $telegram->sendMessage([
-//            'chat_id' => '129956964',
-//            'text' => 'received your message thanks',
-//            'parse_mode' => 'HTML'
-//        ]);
+        $telegram->sendMessage([
+            'chat_id' => '129956964',
+            'text' => 'received your message thanks',
+            'parse_mode' => 'HTML'
+        ]);
     }
 }

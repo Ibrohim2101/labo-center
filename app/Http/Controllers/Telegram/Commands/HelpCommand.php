@@ -27,6 +27,21 @@ class HelpCommand extends Command
     /**
      * {@inheritdoc}
      */
+    public function handle()
+    {
+        $response = $this->getUpdate();
+
+        $text = 'Hey stranger, thanks for visiting me.' . chr(10) . chr(10);
+        $text .= 'I am a bot and working for' . chr(10);
+        $text .= env('APP_URL') . chr(10) . chr(10);
+        $text .= 'Please come and visit me there.' . chr(10);
+
+        $this->replyWithMessage(compact('text'));
+    }
+
+    /**
+     * {@inheritdoc}
+     */
 //    public function handle()
 //    {
 //        $commands = $this->telegram->getCommands();
@@ -39,21 +54,4 @@ class HelpCommand extends Command
 //
 //        $this->replyWithMessage(compact('text'));
 //    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function handle()
-
-    {
-        $response = $this->getUpdate();
-
-        $text = 'Hey stranger, thanks for visiting me.' . chr(10) . chr(10);
-        $text .= 'I am a bot and working for' . chr(10);
-        $text .= env('APP_URL') . chr(10) . chr(10);
-        $text .= 'Please come and visit me there.' . chr(10);
-
-        $this->replyWithMessage(compact('text'));
-
-    }
 }
