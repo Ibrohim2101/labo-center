@@ -2,20 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use Telegram\Bot\Api;
+use Telegram;
+use Telegram\Bot\Exceptions\TelegramSDKException;
 
 class WebhookController extends Controller
 {
     public function __invoke()
     {
-        $telegram = new Api(env('TELEGRAM_BOT_TOKEN', 'provide-bot-token'));
+        try {
+            Telegram::commandsHandler(true);
+        } catch (TelegramSDKException $e) {
+            return $e->getMessage() . ' in ' . $e->getFile() . ' on ' . $e->getLine();
+        }
 
-        $update = $telegram->commandsHandler(true);
-
-        $telegram->sendMessage([
+        Telegram::sendMessage([
             'chat_id' => '129956964',
             'text' => 'received your message thanks',
             'parse_mode' => 'HTML'
         ]);
+
+        return 'OK';
     }
 }
