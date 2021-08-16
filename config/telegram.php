@@ -117,7 +117,7 @@ return [
     */
     'commands' => [
 //        Telegram\Bot\Commands\HelpCommand::class,
-        \App\Telegram\Commands\HelpCommand::class
+        \App\Http\Controllers\Telegram\Commands\HelpCommand::class
     ],
 
     /*
