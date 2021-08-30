@@ -36,7 +36,7 @@ class SendNewApplicationFromTelegram
         }
 
         try {
-            Telegram::bot()->sendMessage([
+            Telegram::bot()->setAsyncRequest(true)->sendMessage([
                 'chat_id' => $this->chat_id,
                 'text' => $message,
                 'parse_mode' => 'HTML'

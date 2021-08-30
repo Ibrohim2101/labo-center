@@ -136,12 +136,12 @@
       <div class="swiper-container mySwiper my-5" id="example" style="max-width: 90vw;">
          <h1 class="text-center example__title">Mahsulotlarimizdan namunalar</h1>
          <div class="photos">
-            <div class="photo1"><img src="/img/rp/4.jpg" alt="Mahsulotlardan na'muna" loading="lazy"></div>
-            <div class="photo2"><img src="/img/rp/5.jpg" alt="Mahsulotlardan na'muna" loading="lazy"></div>
-            <div class="photo3"><img src="/img/rp/6.jpg" alt="Mahsulotlardan na'muna" loading="lazy"></div>
-            <div class="photo4"><img src="/img/rp/1.jpg" alt="Mahsulotlardan na'muna" loading="lazy"></div>
-            <div class="photo5"><img src="/img/rp/2.jpg" alt="Mahsulotlardan na'muna" loading="lazy"></div>
-            <div class="photo6"><img src="/img/rp/3.jpg" alt="Mahsulotlardan na'muna" loading="lazy"></div>
+            <div class="photo1"><img src="/img/rp/4.jpg" alt="labo mahsulotlardan na'muna" loading="lazy"></div>
+            <div class="photo2"><img src="/img/rp/5.jpg" alt="labo mahsulotlardan na'muna" loading="lazy"></div>
+            <div class="photo3"><img src="/img/rp/6.jpg" alt="labo mahsulotlardan na'muna" loading="lazy"></div>
+            <div class="photo4"><img src="/img/rp/1.jpg" alt="labo mahsulotlardan na'muna" loading="lazy"></div>
+            <div class="photo5"><img src="/img/rp/2.jpg" alt="labo mahsulotlardan na'muna" loading="lazy"></div>
+            <div class="photo6"><img src="/img/rp/3.jpg" alt="labo mahsulotlardan na'muna" loading="lazy"></div>
          </div>
       </div>
       <!--Products begin-->
@@ -149,24 +149,24 @@
       <!--Price beegin-->
       <div class="container my-5" id="prices">
          <div class="price-images row text-center">
-            <h1 class="text-center">Mahsulot turlari</h1>
+            <h1 class="text-center" aria-label="">Mahsulot turlari</h1>
             <div class="col-md-3 col-sm-6 price__effect1">
-               <img src="/img/product1.jpg" alt="Bortli furgon" width="200px" height="200px" loading="lazy">
+               <img src="/img/product1.jpg" alt="Labo Bortli furgon narxi" width="200px" height="200px" loading="lazy">
                <h5>Bortli furgon</h5>
 
             </div>
             <div class="col-md-3 col-sm-6 price__effect2">
-               <img src="/img/product2.jpg" alt="Furgon" width="200px" height="200px" loading="lazy">
+               <img src="/img/product2.jpg" alt="Labo Furgon narxi" width="200px" height="200px" loading="lazy">
                <h5>Furgon</h5>
 
             </div>
             <div class="col-md-3 col-sm-6 price__effect3">
-               <img src="/img/product3.jpg" alt="Izotermik" width="200px" height="200px" loading="lazy">
+               <img src="/img/product3.jpg" alt="Labo Izotermik narxi" width="200px" height="200px" loading="lazy">
                <h5>Izotermik</h5>
 
             </div>
             <div class="col-md-3 col-sm-6 price__effect4">
-               <img src="/img/product4.jpg" alt="Sendvich-refregirator" width="200px" height="200px" loading="lazy">
+               <img src="/img/product4.jpg" alt="Labo Sendvich-refregirator narxi" width="200px" height="200px" loading="lazy">
                <h5>Sendvich-refregirator</h5>
             </div>
          </div>

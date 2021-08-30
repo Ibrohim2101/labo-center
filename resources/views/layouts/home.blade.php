@@ -42,7 +42,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top header">
    <div class="container">
       <a class="navbar-brand" href="#">
-         <img src="/img/LOGO.png" alt="Labo Center logo" width="48" height="48" class="d-inline-block align-text-top">
+         <img src="/img/LOGO.png" alt="Labo Center in Uzbekistan logo" width="48" height="48"
+              class="d-inline-block align-text-top">
          Labo Center
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -94,7 +95,7 @@
                   <input name="name" value="{{ old('name') }}" type="text"
                          class="form-control @error('name') is-invalid @enderror"
                          id="name" aria-describedby="name"
-                         autofocus>
+                         autofocus autocomplete="false">
                   @error('name')
                   <div class="invalid-feedback">{{ $message }}</div>
                   @enderror
@@ -121,7 +122,19 @@
          </div>
          <div class="modal-footer">
             <button class="btn btn-secondary" data-bs-dismiss="modal">Yopish</button>
-            <button form="application-form" type="submit" class="btn btn-logo">Jo'natish</button>
+            <button form="application-form" type="submit" class="btn btn-logo">Jo'natish
+            </button>
+            @push('prevent-application-form-submit')
+               <script>
+                   let clickBtn = 0;
+                   $('#application-form').submit(function (e) {
+                       ++clickBtn;
+                       if (clickBtn > 1) {
+                           e.preventDefault();
+                       }
+                   });
+               </script>
+            @endpush
          </div>
       </div>
    </div>
@@ -186,6 +199,7 @@
 <script src="{{ asset('js/custom.js') }}"></script>
 
 @stack('show-application-modal')
+@stack('prevent-application-form-submit')
 
 @if(session('error') || session('success'))
    <script>
