@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Events\NewApplicationCreated;
 use App\Http\Requests\StoreApplicationRequest;
 use App\Models\Application;
+use Illuminate\Support\Facades\Log;
 
 class ApplicationController extends Controller
 {
@@ -16,6 +17,10 @@ class ApplicationController extends Controller
             $application = Application::create($validated);
         } catch (\Exception $exception) {
             $request->session()->flash('error', "Tizmda nosozslik iltimos keyinroq urinib ko'ring");
+            Log::error('Cannot create an application', [
+                ' application' => $validated,
+                '\n exception' => 'Message: ' . $exception->getMessage() . ' in ' . $exception->getFile() . ' on ' . $exception->getLine()
+            ]);
             return redirect()->route('home.index');
         }
 

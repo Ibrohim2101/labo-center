@@ -5,7 +5,7 @@ namespace App\Listeners;
 use App\Events\NewApplicationCreated;
 use App\Models\User;
 use Illuminate\Support\Facades\Log;
-use Telegram\Bot\Api;
+use Telegram;
 use Telegram\Bot\Exceptions\TelegramSDKException;
 
 class SendNewApplicationFromTelegram
@@ -31,13 +31,12 @@ class SendNewApplicationFromTelegram
     {
         $message = "<b>Ism, familya: </b>" . htmlspecialchars($event->application->name) .
             "\n<b>Telefon raqam: </b>" . htmlspecialchars($event->application->phone);
-        if (isset($event->application->message))
+        if (isset($event->application->message)) {
             $message .= "\n<b>Xabar: </b>" . htmlspecialchars($event->application->message);
+        }
 
         try {
-            $telegram = new Api(env('TELEGRAM_BOT_TOKEN', 'provide-bot-token'));
-
-            $telegram->sendMessage([
+            Telegram::bot()->sendMessage([
                 'chat_id' => $this->chat_id,
                 'text' => $message,
                 'parse_mode' => 'HTML'
