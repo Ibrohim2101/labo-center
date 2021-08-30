@@ -32,29 +32,30 @@ class StartCommand extends Command
      */
     public function handle()
     {
-        $message = $this->update->message;
+        $message = $this->update->getMessage();
         $telegramUser = $message->from;
+        $chat = $this->update->getChat();
 
         $this->replyWithChatAction(['action' => Actions::TYPING]);
-        $text = 'Labo Centerga xush kelibsiz <b>' . $telegramUser->firstName . '</b>!';
+        $text = 'Labo Centerga xush kelibsiz <b>' . $telegramUser->firstName . '</b>';
         $this->replyWithMessage(['text' => $text, 'parse_mode' => 'HTML']);
 
-        $isAdmin = $telegramUser->id === env('BOT_ADMIN_ID');
+        $isAdmin = $telegramUser->id == env('BOT_ADMIN_ID');
         if (!$isAdmin) {
-            return false;
+            return $this->update;
         }
 
         $user = User::find(1);
         $isAdminRegistered = isset($user);
         if (!$isAdminRegistered) {
-            $this->replyWithMessage(['text' => 'Iltimos, asosiy <a href="' . env('APP_URL', 'labo-center.uz') . '">saytda ro\'yhatdan o\'ting', 'parse_mode' => 'HTML']);
-            return false;
+            $this->replyWithMessage(['text' => 'Hurmatli Admin, avval asosiy <a href="' . env('APP_URL', 'https://labo-center.uz') . '/register' . '">saytda</a> ro\'yhatdan o\'ting', 'parse_mode' => 'HTML']);
+            return $this->update;
         }
 
         // Update chat_id in DB if it is changed
-        $chat = $message->chat;
         if ($user->chat_id !== $chat->id) {
-            $user->update(['chat_id' => $chat->id]);
+            $user->chat_id = $chat->id;
+            $user->save();
         }
     }
 }

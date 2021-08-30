@@ -13,7 +13,7 @@ Route::get('/', function () {
 
 // Webhook (Telegram bot)
 //8a6DvPbabmL0kxTwIP5xYDmHaA6CNGPnevxyHgjYq1fGp53hRr6g87j/webhook
-Route::post('/webhook', WebhookController::class)->name('webhook');
+Route::post('/8a6DvPbabmL0kxTwIP5xYDmHaA6CNGPnevxyHgjYq1fGp53hRr6g87j/webhook', WebhookController::class)->name('webhook');
 
 Route::post('/applications', [ApplicationController::class, 'store'])->name('applications.store');
 

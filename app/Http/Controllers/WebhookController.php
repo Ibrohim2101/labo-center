@@ -10,22 +10,11 @@ class WebhookController extends Controller
 {
     public function __invoke()
     {
-        //pass true in case of webhook
         $update = Telegram::bot()->commandsHandler(true);
 
-        Telegram::bot()->sendMessage([
-            'chat_id' => '129956964',
-            'text' => 'Sizga qanday yordam bera olaman?',
-            'parse_mode' => 'HTML'
-        ]);
-
-
-        if (!isset($update)) {
-            return false;
-        }
-
-        $message = $update->message;
-        $chat = $message->chat;
+        $isOk = true;
+        $message = $update->getMessage();
+        $chat = $update->getChat();
 
         try {
             Telegram::bot()->sendMessage([
@@ -40,6 +29,6 @@ class WebhookController extends Controller
             $isOk = false;
         }
 
-        return json_encode(['ok' => $isOk ?? true]);
+        return json_encode(['ok' => $isOk]);
     }
 }

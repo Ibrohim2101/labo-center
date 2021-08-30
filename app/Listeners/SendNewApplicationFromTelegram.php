@@ -19,7 +19,7 @@ class SendNewApplicationFromTelegram
      */
     public function __construct()
     {
-        $this->chat_id = User::find(1)?->chat_id ?? 129956964;
+        $this->chat_id = User::find(1)?->chat_id ?? env('BOT_ADMIN_ID');
     }
 
     /**
