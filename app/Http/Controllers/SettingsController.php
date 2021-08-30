@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UpdateUserRequest;
 use App\Models\User;
 use Exception;
+use Illuminate\Support\Facades\Hash;
 
 class SettingsController
 {
@@ -16,6 +17,8 @@ class SettingsController
     public function update(UpdateUserRequest $request, User $user)
     {
         $validated = $request->validated();
+        $validated['password'] = isset($validated['password']) ? Hash::make($validated['password']) : null;
+
         if (!isset($validated['password']))
             unset($validated['password'], $validated['password_confirmation']);
 
