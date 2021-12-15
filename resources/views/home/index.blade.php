@@ -133,7 +133,7 @@
       <!--Good sides end-->
 
       <!--Products begin-->
-      <div class="swiper-container mySwiper my-5" id="example" style="max-width: 90vw;">
+      <div class="swiper-container mySwiper my-5" id="example" style="max-width: 90vw; margin: auto;">
          <h1 class="text-center example__title">Mahsulotlarimizdan namunalar</h1>
          <div class="photos">
             <div class="photo1"><img src="/img/rp/4.jpg" alt="labo mahsulotlardan na'muna" loading="lazy"></div>
